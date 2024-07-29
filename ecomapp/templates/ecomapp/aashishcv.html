@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'ecomapp/css/stylecv.css' %}" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* Additional CSS for responsiveness */
+    /* Adjustments for smaller screens */
+    @media (max-width: 768px) {
+      .half-width {
+        width: 100%;
+        text-align: center; /* Center align text in half-width divs */
+      }
+      .big-section {
+        padding: 20px; /* Add padding to big sections on smaller screens */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hi-there-name {
+        font-size: 24px; /* Reduce font size for smaller screens */
+      }
+      .link-button {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px; /* Make buttons full width on smaller screens */
+      }
+      .container {
+        flex-direction: column; /* Stack skills vertically on smaller screens */
+      }
+      .skills {
+        margin-bottom: 10px; /* Add space between skill sections */
+      }
+      .div-size-s4 {
+        flex-direction: column; /* Stack elements in work inquiry section */
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    /* Example of making images responsive */
+    .myphoto-s {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <section class="big-section">
+    <div class="half-width">
+      <h1 class="hi-there-name">
+        <span class="color-of-hi-there">HI THERE, I'M</span><br />
+        <span class="color-of-myname">aashish</span>
+      </h1>
+      <h3 class="short-about-me">
+        Occupational Therapist in Hospital, UP, India
+      </h3>
+      <a class="link-button" target="_blank" href="#">Hire Me</a>
+    </div>
+    <div class="half-width">
+      <img class="myphoto-s" src="{% static 'ecomapp/images/kaiser.png' %}" alt="kaiser" />
+    </div>
+  </section>
+  <section class="big-section">
+    <div class="half-width">
+      <img class="myphoto-s" src="{% static 'ecomapp/images/kaiser2.png' %}" alt="kaiser" />
+    </div>
+    <div class="half-width about-s2">
+      <h2 class="about-text-color">ABOUT</h2>
+      <h3 class="long-about-me">
+        I love to introduce myself as a knowledge seeker, I often explore and
+        observe new things around me to have new experiences. I am currently
+        working as an Occupational Therapist in a hospital.
+      </h3>
+      <a class="link-button" target="_blank" href="#">Download CV</a>
+    </div>
+  </section>
+  <section class="banner-s3 big-section-2">
+    <div>
+      <h2 class="latest-project">
+        <span class="h2-text-color">LATEST</span> WORKING PROJECT
+      </h2>
+    </div>
+    <div class="latest-project-div-style latest-project-div-style-margin">
+      <img class="latest-project-photo" src="{% static 'ecomapp/images/image 4.png' %}" alt="gym" />
+      <h3 class="latest-project-text">Mighty gym</h3>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
+      </p>
+    </div>
+    <div class="latest-project-div-style">
+      <img
+        class="latest-project-photo"
+        src="{% static 'ecomapp/images/image 5.png' %}"
+        alt="agency"
+      />
+      <h3 class="latest-project-text">Creative Agency</h3>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
+      </p>
+    </div>
+    <div class="latest-project-div-style">
+      <img
+        class="latest-project-photo"
+        src="{% static 'ecomapp/images/image 6.png' %}"
+        alt="music"
+      />
+      <h3 class="latest-project-text">Hard Rock Music</h3>
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry.
+      </p>
+    </div>
+  </section>
+  <section class="big-section">
+    <h2 class="my-skills"><span class="h2-text-color">MY</span> SKILLS</h2>
+    <div class="half-width">
+      <p class="skills-p">HTML</p>
+      <div class="container">
+        <div class="skills html">90%</div>
+      </div>
+
+      <p class="skills-p">CSS</p>
+      <div class="container">
+        <div class="skills css">80%</div>
+      </div>
+
+      <p class="skills-p">ILLUSTRATOR</p>
+      <div class="container">
+        <div class="skills illustrator">65%</div>
+      </div>
+
+      <p class="skills-p">PHOTOSHOP</p>
+      <div class="container">
+        <div class="skills photoshop">60%</div>
+      </div>
+    </div>
+    <div class="half-width">
+      <p class="skills-p">TEAM MANAGEMENT</p>
+      <div class="container">
+        <div class="skills team-management">90%</div>
+      </div>
+
+      <p class="skills-p">CRITICAL THINKING</p>
+      <div class="container">
+        <div class="skills critical-thinking">80%</div>
+      </div>
+
+      <p class="skills-p">PROBLEM SOLVING</p>
+      <div class="container">
+        <div class="skills problem-solving">65%</div>
+      </div>
+
+      <p class="skills-p">COMMUNICATION</p>
+      <div class="container">
+        <div class="skills communication">60%</div>
+      </div>
+    </div>
+  </section>
+  <section class="small-section">
+    <div class="div-size-s4">
+      <div class="work-inquiry-s4">WORK INQUIRY</div>
+      <div class="lets-chat-s4">
+        <a
+          class="link-button"
+          target="_blank"
+          href="https://www.facebook.com/"
+        >
+          Let's Chat
+        </a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p class="stay-connected">STAY CONNECTED</p>
+    <p class="footer-mail">aashishbittu@gmail.com</p>
+    <div class="footer-image-position">
+      <img class="footer-image-size" src="{% static 'ecomapp/icons/dribble.png' %}" alt="dribble" />
+      <img class="footer-image-size" src="{% static 'ecomapp/icons/behance.png' %}" alt="behance" />
+      <img
+        class="footer-image-size"
+        src="{% static 'ecomapp/icons/instagram.png' %}"
+        alt="instagram"
+      />
+    </div>
+  </footer>
+</body>
+</html>

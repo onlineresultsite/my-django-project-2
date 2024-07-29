@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Checkout</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'ecomapp/css/bootstrap.css' %}" />
+  <link href="{% static 'ecomapp/css/style.css' %}" rel="stylesheet" />
+  <link href="{% static 'ecomapp/css/responsive.css' %}" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h2>Checkout</h2>
+    <ul>
+      {% for item in cart_items %}
+      <li>{{ item.product.name }} - ${{ item.product.price }} x {{ item.quantity }}</li>
+      {% endfor %}
+    </ul>
+    <h3>Total: ${{ total_amount }}</h3>
+    <form method="post" action="{% url 'place_order' %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary">Place Order</button>
+    </form>
+  </div>
+</body>
+</html>

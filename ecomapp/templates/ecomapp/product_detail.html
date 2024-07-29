@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Product Details</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'ecomapp/css/bootstrap.css' %}" />
+  <link href="{% static 'ecomapp/css/style.css' %}" rel="stylesheet" />
+  <link href="{% static 'ecomapp/css/responsive.css' %}" rel="stylesheet" />
+</head>
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <span>
+            TRIVEDINEW
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav  ">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'shop' %}">
+                Shop
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'why' %}">
+                Why Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'testimonial' %}">
+                Testimonial
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+            </li>
+          </ul>
+          <div class="user_option">
+            <form id="logout-form" action="{% url 'logout' %}" method="POST" style="display: none;">
+              {% csrf_token %}
+            </form>
+            <a href="#" onclick="document.getElementById('logout-form').submit();">Logout</a>
+            <a href="{% url 'cart' %}">
+              <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+            </a>
+
+            <a href="{% url 'order_history' %}">
+              <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
+              <span>
+                Order History
+              </span>
+            </a>
+          
+              <span class = "text-edit" >
+                <P>Welcome, {{ user.username }}!</P>
+             </span>
+
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+
+
+  <div class="container">
+    <h2>{{ product.name }}</h2>
+    <div class="img-box"><img src="{{ product.image.url }}" alt="{{ product.name }}"></div>
+    <p>{{ product.description }}</p>
+    <h3>${{ product.price }}</h3>
+    <a href="{% url 'add_to_cart' product.pk %}" class="btn btn-primary">Add to Cart</a>
+  </div>
+</body>
+</html>
